@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--Reload Page every hour-->
+    <meta http-equiv="refresh" content="86400">
+
+    <title>GOES East - Full Disc (Florida Focus) - GeoColor</title>
+    </head>
+    <body>
+        <style>
+            :root {
+                --state-x: 4278px;
+                --state-y: 2269px;
+                --state-width: 661px;
+                --state-height: 579px;
+                --state-scale: 1;
+                --box1-x: 3155px;
+                --box1-y: 2269px;
+                --box1-width: 1784px;
+                --box1-height: 579px;
+                --box1-scale: 1;
+                --box2-x: 3155px;
+                --box2-y: 2269px;
+                --box2-width: 7086px;
+                --box2-height: 3467px;
+                --box2-scale: 1;
+            }
+            body {
+                background-color: black;
+                margin:0;
+            }
+            #frame {
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                background: black;
+            }
+            img {
+                top: calc(-1 * (var(--state-y) - (100vh - var(--state-height))/2));
+                left: calc(-1 * (var(--state-x) - (100vw - var(--state-width))/2));
+                position: absolute;
+                animation-name: bounce;
+                animation-timing-function: ease;
+                animation-iteration-count: infinite;
+                animation-duration: 720s;
+                transform-origin: calc(var(--state-x) + (var(--state-width)/2)) calc(var(--state-y) + (var(--state-height)/2));
+                transform: scale(var(--state-scale));
+            }
+            @keyframes bounce {
+                0% {
+                    
+                }
+                20% {
+                    transform:  translateX(calc(((var(--state-x) + (var(--state-width)/2)) - (var(--box1-x) + (var(--box1-width)/2)))*var(--box1-scale)))
+                                translateY(calc(((var(--state-y) + (var(--state-height)/2)) - (var(--box1-y) + (var(--box1-height)/2)))*var(--box1-scale)))
+                                scale(var(--box1-scale));
+                }
+                50% {
+                    transform:  translateX(calc(((var(--box1-x) + (var(--box1-width)/2)) - (var(--box2-x) + (var(--box2-width)/2)))*var(--box2-scale)))
+                                translateY(calc(((var(--box1-y) + (var(--box1-height)/2)) - (var(--box2-y) + (var(--box2-height)/2)))*var(--box2-scale)))
+                                scale(var(--box2-scale));
+                }
+                100% {
+                    transform-origin: calc(var(--state-x) + (var(--state-width)/2)) calc(var(--state-y) + (var(--state-height)/2));
+                    transform: scale(var(--state-scale));
+                }
+            }
+        </style>
+        <script>
+        	visible = "a";
+            invisible = "b";
+        	function do_swap() {
+            	var img = document.getElementById(visible);
+    			img.style.opacity = 0;
+            	var img = document.getElementById(invisible);
+    			img.style.opacity = 1;
+              temp = visible;
+              visible = invisible;
+              invisible = temp;
+          }
+          function swap() {
+            setTimeout(swap, (12*60*1000));
+            var img = document.getElementById(invisible);
+	        img.addEventListener('load', do_swap);
+            img.src = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/latest.jpg?" + new Date().getTime();
+            if (img.complete) {
+                set_scale();
+                do_swap();
+            }
+          }
+          function set_scale() {
+            var viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var viewport_height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+            var temp_width  = getComputedStyle(document.documentElement,null).getPropertyValue('--state-width');
+            temp_width  = temp_width.substring(0, temp_width.length - 2);
+            var temp_height = getComputedStyle(document.documentElement,null).getPropertyValue('--state-height');
+            temp_height = temp_height.substring(0, temp_height.length - 2);
+            var final_scale = Math.min(viewport_width/temp_width, viewport_height/temp_height);
+            document.documentElement.style.setProperty('--state-scale', final_scale);
+            
+            temp_width  = getComputedStyle(document.documentElement,null).getPropertyValue('--box1-width');
+            temp_width  = temp_width.substring(0, temp_width.length - 2);
+            temp_height = getComputedStyle(document.documentElement,null).getPropertyValue('--box1-height');
+            temp_height = temp_height.substring(0, temp_height.length - 2);
+            final_scale = Math.min(viewport_width/temp_width, viewport_height/temp_height);
+            document.documentElement.style.setProperty('--box1-scale', final_scale);
+            
+            temp_width  = getComputedStyle(document.documentElement,null).getPropertyValue('--box2-width');
+            temp_width  = temp_width.substring(0, temp_width.length - 2);
+            temp_height = getComputedStyle(document.documentElement,null).getPropertyValue('--box2-height');
+            temp_height = temp_height.substring(0, temp_height.length - 2);
+            final_scale = Math.min(viewport_width/temp_width, viewport_height/temp_height);
+            document.documentElement.style.setProperty('--box2-scale', final_scale);
+          }
+          set_scale();
+          setTimeout(swap, (12*60*1000));
+        </script>
+        <div id="frame">
+            <img id="a" style="opacity: 1;" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/latest.jpg">
+            <img id="b" style="opacity: 0;" src="">
+        </div>
+    </body>
+</html>
