@@ -11,20 +11,20 @@
     <body>
         <style>
             :root {
-                --state-x: 2139px;
-                --state-y: 1135px;
-                --state-width: 331px;
-                --state-height: 290px;
+                --state-x: 4278px;
+                --state-y: 2269px;
+                --state-width: 661px;
+                --state-height: 579px;
                 --state-scale: 1;
-                --box1-x: 1578px;
-                --box1-y: 1135px;
-                --box1-width: 892px;
-                --box1-height: 290px;
+                --box1-x: 3155px;
+                --box1-y: 2269px;
+                --box1-width: 1784px;
+                --box1-height: 579px;
                 --box1-scale: 1;
-                --box2-x: 1278px;
-                --box2-y: 1135px;
-                --box2-width: 3843px;
-                --box2-height: 1734px;
+                --box2-x: 3155px;
+                --box2-y: 2269px;
+                --box2-width: 7086px;
+                --box2-height: 3467px;
                 --box2-scale: 1;
             }
             body {
@@ -85,7 +85,7 @@
             setTimeout(swap, (12*60*1000));
             var img = document.getElementById(invisible);
 	        img.addEventListener('load', do_swap);
-            img.src = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg?" + new Date().getTime();
+            img.src = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/latest.jpg?" + new Date().getTime();
             if (img.complete) {
                 set_scale();
                 do_swap();
@@ -120,7 +120,7 @@
           setTimeout(swap, (12*60*1000));
         </script>
         <div id="frame">
-            <img id="a" style="opacity: 1;" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/5424x5424.jpg">
+            <img id="a" style="opacity: 1;" src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/latest.jpg">
             <img id="b" style="opacity: 0;" src="">
         </div>
     </body>
