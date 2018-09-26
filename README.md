@@ -9,5 +9,7 @@ All images come from the [GOES-East Image Viewer site](https://www.star.nesdis.n
 
 ## Avaliable Views
 * [Atlantic View](https://antgiant.github.io/GOES-East-Big-Screen/Atlantic.html)
+
+## Image Resolution to High for Chromecast (Causes System Crash)
 * [Florida View](https://antgiant.github.io/GOES-East-Big-Screen/Florida.html)
-  * [High Resolution Edition (Breaks Chromecast)](https://antgiant.github.io/GOES-East-Big-Screen/Florida-Hi-res.html)
+  * [Highest Resolution Edition](https://antgiant.github.io/GOES-East-Big-Screen/Florida-Hi-res.html)
