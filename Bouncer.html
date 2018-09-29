@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--Reload Page every hour-->
+    <meta http-equiv="refresh" content="43200">
+
+    <title>Bouncing GOES</title>
+    </head>
+    <body onload="setImageSize(); swap();">
+        <style>
+            :root {
+                --image-width: 100vw;
+                --image-height: 100vh;
+            }
+            body {
+                background-color: black;
+                margin:0;
+            }
+            #frame {
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                background: black;
+            }
+            img {
+                position: absolute;
+                animation-name: bounce-y, bounce-x;
+                animation-timing-function: linear,linear;
+                animation-iteration-count: infinite, infinite;
+                animation-direction: alternate, alternate;
+                animation-duration: 120s, 90s;
+            }
+            @keyframes bounce-y {
+                from {
+                    top: 0;
+                }
+                to {
+                    top: calc(100vh - var(--image-height));
+                }
+            }
+            @keyframes bounce-x {
+                from {
+                    left: 0;
+                }
+                to {
+                    left: calc(100vw - var(--image-width));
+                }
+            }
+        </style>
+        <script>
+        	visible = "a";
+            invisible = "b";
+
+            //Setting various items
+            let urlParams = new URLSearchParams(window.location.search);
+
+            //Set X Bounce (Default to 3 minutes
+            x_bounce = parseInt(urlParams.get('x_bounce_seconds'), 10);
+            x_bounce = (x_bounce > 0?x_bounce:3*60);
+
+            //Set y Bounce (Default to 4 minute)
+            y_bounce = parseInt(urlParams.get('y_bounce_seconds'), 10);
+            y_bounce = (y_bounce > 0?y_bounce:4*60);
+
+            //Set Bounce Speed            
+            getRule("img").style.setProperty('animation-duration', y_bounce + "s, " + x_bounce + "s");
+
+            //Set page reload speed (Default to 12 hours)
+            page_reload_hours = parseInt(urlParams.get('page_reload_hours'), 10);
+            page_reload_hours = (page_reload_hours > 0?page_reload_hours:12);
+            document.querySelector('meta[http-equiv="refresh"]').setAttribute("content", page_reload_hours*60*60);
+            
+
+            //Set page reload speed (Default to 12 minutes)
+            image_reload_minutes = parseInt(urlParams.get('image_reload_minutes'), 10);
+            image_reload_minutes = (image_reload_minutes > 0?image_reload_minutes:12);
+            image_reload_minutes = image_reload_minutes*60*1000;
+
+            //Set image URL (Default to "Full Disc" view.)
+            image_url = urlParams.get('image_url') || "";
+            //Thanks to https://stackoverflow.com/questions/205923/best-way-to-handle-security-and-avoid-xss-with-user-entered-urls#205967
+            image_url = image_url.replace(/[^-A-Za-z0-9+&@#/%?=~_|!:,.;\(\)]/, "");
+            image_url = (image_url == ""? "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg":image_url);
+
+            //Set Page Title (Default to Bouncing GOES)
+            page_title = urlParams.get('page_title') || "";
+            document.title = (page_title == ""? "Bouncing GOES":page_title);
+
+
+        	function do_swap() {
+            	var img = document.getElementById(visible);
+    			img.style.opacity = 0;
+            	var img = document.getElementById(invisible);
+    			img.style.opacity = 1;
+                temp = visible;
+                visible = invisible;
+                invisible = temp;
+                setImageSize();
+            }
+            function swap() {
+                setTimeout(swap, image_reload_minutes);
+                var img = document.getElementById(invisible);
+                img.addEventListener('load', do_swap);
+                img.src = image_url + "?" + new Date().getTime();
+            }
+            function setImageSize() {
+                document.documentElement.style.setProperty('--image-width', document.getElementById(visible).width+'px');
+                document.documentElement.style.setProperty('--image-height', document.getElementById(visible).height+'px');
+            }
+            function getRule(target) {
+                var rules = document.styleSheets[0].cssRules || document.styleSheets[0].rules;
+
+                for (i=0; i<rules.length; i++){
+                    if (rules[i].selectorText.toLowerCase() == target){ 
+                        return(rules[i]);
+                        break;
+                    }
+                }
+            }
+          
+        </script>
+        <div id="frame">
+            <img id="a" style="opacity: 1;" src="loading.gif">
+            <img id="b" style="opacity: 0;" src="">
+        </div>
+    </body>
+</html>
