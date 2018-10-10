@@ -78,6 +78,16 @@
             //Set Bounce Speed            
             getRule("img").style.setProperty('animation-duration', y_bounce + "s, " + x_bounce + "s");
 
+            //Set max size (N/A)
+            max_size_percent = parseInt(urlParams.get('max_size_percent'), 10);
+            max_size_percent = (max_size_percent > 0?max_size_percent:-1);
+
+            //Set Max Size
+            if (max_size_percent > 0) {
+                getRule("img").style.maxHeight = max_size_percent + "%";
+                getRule("img").style.maxWidth = max_size_percent + "%";
+            }
+
             //Set page reload speed (Default to 12 hours)
             page_reload_hours = parseInt(urlParams.get('page_reload_hours'), 10);
             page_reload_hours = (page_reload_hours > 0?page_reload_hours:12);

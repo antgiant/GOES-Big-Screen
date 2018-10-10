@@ -179,6 +179,8 @@ All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.
     * Number of minutes between image reloads. (Default: 12) Should be based on how frequently the source image updates.
   * image_url
     * URL of the image to be displayed.
+  * max_size_percent
+    * Maximum size of the bouncing image relative to screen. So, 100% = image will exactly fit screen (with black bars if needed).
 
 ## Image Resolution to High for Chromecast (Causes System Crash)
 * ~~[Florida View](<Florida.html>)~~
