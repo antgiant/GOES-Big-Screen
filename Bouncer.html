@@ -88,6 +88,13 @@
                 getRule("img").style.maxWidth = max_size_percent + "%";
             }
 
+            crop_clip_path = urlParams.get('crop_clip_path');
+            if (typeof crop_clip_path !== 'undefined') {
+                getRule("img").style.setProperty('-webkit-clip-path', 'polygon(' + crop_clip_path + ')');
+                getRule("img").style.setProperty('clip-path', 'polygon(' + crop_clip_path + ')');
+            }
+
+
             //Set page reload speed (Default to 12 hours)
             page_reload_hours = parseInt(urlParams.get('page_reload_hours'), 10);
             page_reload_hours = (page_reload_hours > 0?page_reload_hours:12);
