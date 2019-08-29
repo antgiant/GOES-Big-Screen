@@ -23,6 +23,8 @@
             :root {
                 --image-width: 100vw;
                 --image-height: 100vh;
+                --left: 0;
+                --top:0;
             }
             body {
                 background-color: black;
@@ -45,7 +47,7 @@
             }
             @keyframes bounce-y {
                 from {
-                    top: 0;
+                    top: calc(0px - var(--top));
                 }
                 to {
                     top: calc(100vh - var(--image-height));
@@ -53,7 +55,7 @@
             }
             @keyframes bounce-x {
                 from {
-                    left: 0;
+                    left: calc(0px - var(--left));
                 }
                 to {
                     left: calc(100vw - var(--image-width));
@@ -152,8 +154,84 @@
                 img.src = image_url + "?" + new Date().getTime();
             }
             function setImageSize() {
-                document.documentElement.style.setProperty('--image-width', document.getElementById(visible).width+'px');
-                document.documentElement.style.setProperty('--image-height', document.getElementById(visible).height+'px');
+                temp_w = document.getElementById(visible).width;
+                temp_h = document.getElementById(visible).height;
+                temp_top = 0;
+                temp_left = 0;
+                crop_clip_path = urlParams.get('crop_clip_path');
+                if (crop_clip_path) {
+                    ats = (crop_clip_path.split("at").length) - 1;
+                    commas = (crop_clip_path.split(",").length) - 1;
+                    spaces = (crop_clip_path.split(" ").length) - 1;
+                    if (ats == 0) {
+                        if (commas == 0) {
+                            if (spaces == 0) {
+                                if (crop_clip_path.split(" ")[0].slice(-2).toLowerCase() == "px") {
+                                    temp_top -= crop_clip_path.split(" ")[0].slice(0, -2);
+                                    temp_left -= crop_clip_path.split(" ")[0].slice(0, -2);
+                                    temp_h -= crop_clip_path.split(" ")[0].slice(0, -2)*2;
+                                    temp_w -= crop_clip_path.split(" ")[0].slice(0, -2)*2;
+                                } else if (crop_clip_path.split(" ")[0].slice(-1) == "%") {
+                                    temp_top -= temp_h*((crop_clip_path.split(" ")[0].slice(0, -1))/100);
+                                    temp_left -=  temp_w*((crop_clip_path.split(" ")[0].slice(0, -1))/100);
+                                    temp_h -= temp_h*((crop_clip_path.split(" ")[0].slice(0, -1)*2)/100);
+                                    temp_w -= temp_w*((crop_clip_path.split(" ")[0].slice(0, -1)*2)/100);
+                                }
+                            } else if (spaces == 1) {
+                                if (crop_clip_path.split(" ")[0].slice(-2).toLowerCase() == "px") {
+                                    temp_top -= crop_clip_path.split(" ")[0].slice(0, -2);
+                                    temp_h -= crop_clip_path.split(" ")[0].slice(0, -2)*2;
+                                } else if (crop_clip_path.split(" ")[0].slice(-1) == "%") {
+                                    temp_top -= temp_h*((crop_clip_path.split(" ")[0].slice(0, -1))/100);
+                                    temp_h -= temp_h*((crop_clip_path.split(" ")[0].slice(0, -1)*2)/100);
+                                }
+                                if (crop_clip_path.split(" ")[1].slice(-2).toLowerCase() == "px") {
+                                    temp_left -= crop_clip_path.split(" ")[0].slice(0, -2);
+                                    temp_w -= crop_clip_path.split(" ")[1].slice(0, -2)*2;
+                                } else if (crop_clip_path.split(" ")[1].slice(-1) == "%") {
+                                    temp_left -=  temp_w*((crop_clip_path.split(" ")[0].slice(0, -1))/100);
+                                    temp_w -= temp_w*((crop_clip_path.split(" ")[1].slice(0, -1)*2)/100);
+                                }
+                            } else if (spaces == 3) {
+                                //Top
+                                if (crop_clip_path.split(" ")[0].slice(-2).toLowerCase() == "px") {
+                                    temp_top -= crop_clip_path.split(" ")[0].slice(0, -2);
+                                    temp_h -= crop_clip_path.split(" ")[0].slice(0, -2);
+                                } else if (crop_clip_path.split(" ")[0].slice(-1) == "%") {
+                                    temp_top -= document.getElementById(visible).height*((crop_clip_path.split(" ")[0].slice(0, -1))/100);
+                                    temp_h -= document.getElementById(visible).height*((crop_clip_path.split(" ")[0].slice(0, -1))/100);
+                                }
+                                //Bottom
+                                if (crop_clip_path.split(" ")[2].slice(-2).toLowerCase() == "px") {
+                                    temp_h -= crop_clip_path.split(" ")[2].slice(0, -2);
+                                } else if (crop_clip_path.split(" ")[2].slice(-1) == "%") {
+                                    temp_h -= document.getElementById(visible).height*((crop_clip_path.split(" ")[2].slice(0, -1))/100);
+                                }
+                                //Right
+                                if (crop_clip_path.split(" ")[1].slice(-2).toLowerCase() == "px") {
+                                    temp_w -= crop_clip_path.split(" ")[1].slice(0, -2);
+                                } else if (crop_clip_path.split(" ")[1].slice(-1) == "%") {
+                                    temp_w -= document.getElementById(visible).width*((crop_clip_path.split(" ")[1].slice(0, -1))/100);
+                                }
+                                //Left
+                                if (crop_clip_path.split(" ")[3].slice(-2).toLowerCase() == "px") {
+                                    temp_left -=  crop_clip_path.split(" ")[3].slice(0, -2);
+                                    temp_w -= crop_clip_path.split(" ")[3].slice(0, -2);
+                                } else if (crop_clip_path.split(" ")[3].slice(-1) == "%") {
+                                    temp_left -=  document.getElementById(visible).width*((crop_clip_path.split(" ")[3].slice(0, -1))/100);
+                                    temp_w -= document.getElementById(visible).width*((crop_clip_path.split(" ")[3].slice(0, -1))/100);
+                                }
+                            }
+                        }
+                    }
+                }
+                document.documentElement.style.setProperty('--image-width', (temp_w - temp_left)+'px');
+                document.documentElement.style.setProperty('--image-height', (temp_h - temp_top)+'px');
+                document.documentElement.style.setProperty('--top', -temp_top+'px');
+                document.documentElement.style.setProperty('--left', -temp_left+'px');
+                
+                getRule("img").style.maxHeight = (max_size_percent/((temp_h - temp_top)/document.getElementById(visible).height)) + "%";
+                getRule("img").style.maxWidth = (max_size_percent/((temp_w - temp_left)/document.getElementById(visible).width)) + "%";
             }
             function getRule(target) {
                 var rules = document.styleSheets[0].cssRules || document.styleSheets[0].rules;
