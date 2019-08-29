@@ -27,8 +27,8 @@ All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.
 * [Tropical Atlantic - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=25&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/GEOCOLOR/3600x2160.jpg&page_title=Tropical Atlantic - GOES-East - Sector Views - wide view - GeoColor>)
 
 ## Transient Views (May not be working, but update the fastest
-* [Spartanburg County, SC - TrueColor at 35°N - 82°W](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=1&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/35N-82W/TRUECOLOR/latest.jpg&page_title=Spartanburg County, SC - GOES-East Mesoscale View - TrueColor at 35°N - 82°W>)
-* [Near The Bahamas - TrueColor at 26°N - 79°W](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=1&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/26N-79W/TRUECOLOR/latest.jpg&page_title=Near The Bahamas - GOES-East Mesoscale View - TrueColor at 26°N - 79°W>)
+* [Mezo 1](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=1&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M1/DayLandCloud/latest.jpg&page_title=Mezo View 1&image_reload_minutes=2>)
+* [Mezo 2](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=1&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M2/DayLandCloud/latest.jpg&page_title=Mezo View 2&image_reload_minutes=2>)
 
 ### Custom Bouncer Options
 * https://earth.wooley.cloud/Bouncer.html understands the following URL Parameters
