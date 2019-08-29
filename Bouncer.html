@@ -89,9 +89,27 @@
             }
 
             crop_clip_path = urlParams.get('crop_clip_path');
-            if (typeof crop_clip_path !== 'undefined') {
-                getRule("img").style.setProperty('-webkit-clip-path', 'polygon(' + crop_clip_path + ')');
-                getRule("img").style.setProperty('clip-path', 'polygon(' + crop_clip_path + ')');
+            if (crop_clip_path) {
+                ats = (crop_clip_path.split("at").length) - 1;
+                commas = (crop_clip_path.split(",").length) - 1;
+                spaces = (crop_clip_path.split(" ").length) - 1;
+                if (ats == 0) {
+                    if (commas == 0) {
+                        getRule("img").style.setProperty('-webkit-clip-path', 'inset(' + crop_clip_path + ')');
+                        getRule("img").style.setProperty('clip-path', 'inset(' + crop_clip_path + ')');
+                    } else {
+                        getRule("img").style.setProperty('-webkit-clip-path', 'polygon(' + crop_clip_path + ')');
+                        getRule("img").style.setProperty('clip-path', 'polygon(' + crop_clip_path + ')');
+                    }
+                } else {
+                    if (spaces == 3) {
+                        getRule("img").style.setProperty('-webkit-clip-path', 'circle(' + crop_clip_path + ')');
+                        getRule("img").style.setProperty('clip-path', 'circle(' + crop_clip_path + ')');
+                    } else {
+                        getRule("img").style.setProperty('-webkit-clip-path', 'ellipse(' + crop_clip_path + ')');
+                        getRule("img").style.setProperty('clip-path', 'ellipse(' + crop_clip_path + ')');
+                    }
+                }
             }
 
 
