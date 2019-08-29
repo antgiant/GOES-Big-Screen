@@ -182,7 +182,7 @@ All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.
   * max_size_percent
     * Maximum size of the bouncing image relative to screen. So, 100% = image will exactly fit screen (with black bars if needed).
   * crop_clip_path
-    * A comma separated list of points to crop the image. It sends the points directly to the [polygon](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape#polygon()) filling rule of the css [clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path) property.
+    * A comma separated list of points to crop the image. It sends the points directly to the [inset](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape#inset()) filling rule of the css [clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path) property. (Does not support rounded corners.)
 
 ## Image Resolution to High for Chromecast (Causes System Crash)
 * ~~[Florida View](<Florida.html>)~~
