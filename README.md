@@ -25,6 +25,7 @@ All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.
 * [U.S. Atlantic Coast - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/GEOCOLOR/2001x2000.jpg&page_title=U.S. Atlantic Coast - GOES-East - Sector Views - GeoColor>)
 * [Puerto Rico - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/pr/GEOCOLOR/latest.jpg&page_title=Puerto Rico - GOES-East - Sector Views - GeoColor>)
 * [Tropical Atlantic - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=25&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/GEOCOLOR/3600x2160.jpg&page_title=Tropical Atlantic - GOES-East - Sector Views - wide view - GeoColor>)
+* ["Custom" Hurricane Alley - GeoColor](<https://earth.wooley.cloud/Bouncer.html?crop_clip_path=4.9%%206.0%%2053.2%%2019.5%&image_reload_minutes=11&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg&page_title="Custom" Hurricane Alley - GeoColor>)
 
 ## Transient Views (May not be working, but update the fastest
 * [Mezo 1](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=1&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M1/DayLandCloud/latest.jpg&page_title=Mezo View 1&image_reload_minutes=2>)
