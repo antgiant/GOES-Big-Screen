@@ -1,7 +1,7 @@
 # GOES-East-Big-Screen
 A [collection of web pages](https://earth.wooley.cloud) designed for real-time full screen viewing of GOES East imagery.
 
-Originally created to be used with [https://github.com/DeMille/url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast. but should work well on any big screen.
+Originally created to be used with [https://github.com/DeMille/url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast, but should work well on any big screen. (For instance an Amazon Fire TV)
 
 Thank you to [NOAA / NESDIS Center for Satellite Applications and Research](<https://www.star.nesdis.noaa.gov/star/productdisclaimer.php) for making this possible!
 All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.noaa.gov/GOES/index.php).
@@ -26,6 +26,7 @@ All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.
 * [Puerto Rico - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/pr/GEOCOLOR/latest.jpg&page_title=Puerto Rico - GOES-East - Sector Views - GeoColor>)
 * [Tropical Atlantic - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=25&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/GEOCOLOR/3600x2160.jpg&page_title=Tropical Atlantic - GOES-East - Sector Views - wide view - GeoColor>)
 * ["Custom" Hurricane Alley - GeoColor](<https://earth.wooley.cloud/Bouncer.html?crop_clip_path=4.9%%206.0%%2053.2%%2019.5%&image_reload_minutes=11&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg&page_title="Custom" Hurricane Alley - GeoColor>)
+* ["Florida"](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=11&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/se/GEOCOLOR/1200x1200.jpg&crop_clip_path=37.5%%200%%200%%200%&page_title=Florida%20-%20GOES-East%20-%20Sector%20Views%20-%20GeoColor>)
 
 ## Transient Views (May not be working, but update the fastest
 * [Mezo 1](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=1&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M1/DayLandCloud/latest.jpg&page_title=Mezo View 1&image_reload_minutes=2>)
