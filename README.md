@@ -3,8 +3,8 @@ A [collection of web pages](https://earth.wooley.cloud) designed for real-time f
 
 Originally created to be used with [https://github.com/DeMille/url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast, but should work well on any big screen. (For instance an Amazon Fire TV)
 
-Thank you to [NOAA / NESDIS Center for Satellite Applications and Research](<https://www.star.nesdis.noaa.gov/star/productdisclaimer.php) for making this possible!
-All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.noaa.gov/GOES/index.php).
+Thank you to [NOAA / NESDIS Center for Satellite Applications and Research](https://www.star.nesdis.noaa.gov/star/productdisclaimer.php) for making this possible!
+All images come from the [GOES-East Image Viewer site](https://www.star.nesdis.noaa.gov/GOES/index.php).
 
 
 ## Avaliable Views
@@ -20,9 +20,9 @@ All images come from the [GOES-East Image Viewer site](<https://www.star.nesdis.
 * [Southern Plains - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=5&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/sp/GEOCOLOR/1200x1200.jpg&page_title=Southern Plains - GOES-East - Sector Views - GeoColor>)
 * [Southern Mississippi Valley - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=5&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/smv/GEOCOLOR/1200x1200.jpg&page_title=Southern Mississippi Valley - GOES-East - Sector Views - GeoColor>)
 * [Southeast - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=5&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/se/GEOCOLOR/1200x1200.jpg&page_title=Southeast - GOES-East - Sector Views - GeoColor>)
-* [Gulf of Mexico - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/GEOCOLOR/2001x2000.jpg&page_title=Gulf of Mexico - GOES-East - Sector Views - GeoColor>)
+* [Gulf of Mexico - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/gm/GEOCOLOR/2000x2000.jpg&page_title=Gulf of Mexico - GOES-East - Sector Views - GeoColor>)
 * [Caribbean - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=11&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/car/GEOCOLOR/4000x4000.jpg&page_title=Caribbean - GOES-East - Sector Views - GeoColor>)
-* [U.S. Atlantic Coast - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/GEOCOLOR/2001x2000.jpg&page_title=U.S. Atlantic Coast - GOES-East - Sector Views - GeoColor>)
+* [U.S. Atlantic Coast - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/GEOCOLOR/2000x2000.jpg&page_title=U.S. Atlantic Coast - GOES-East - Sector Views - GeoColor>)
 * [Puerto Rico - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=6&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/pr/GEOCOLOR/latest.jpg&page_title=Puerto Rico - GOES-East - Sector Views - GeoColor>)
 * [Tropical Atlantic - GeoColor](<https://earth.wooley.cloud/Bouncer.html?image_reload_minutes=25&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/GEOCOLOR/3600x2160.jpg&page_title=Tropical Atlantic - GOES-East - Sector Views - wide view - GeoColor>)
 * ["Custom" Hurricane Alley - GeoColor](<https://earth.wooley.cloud/Bouncer.html?crop_clip_path=4.9%%206.0%%2053.2%%2019.5%&image_reload_minutes=11&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg&page_title="Custom" Hurricane Alley - GeoColor>)
