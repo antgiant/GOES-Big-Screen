@@ -1,7 +1,7 @@
 # GOES-East-Big-Screen
 A [collection of web pages](https://earth.wooleys.us) designed for real-time full screen viewing of GOES East imagery.
 
-Originally created to be used with [https://github.com/DeMille/url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast, but should work well on any big screen. (For instance an Amazon Fire TV)
+Originally created to be used with tools like [Chromecast Dashboard](https://boombatower.github.io/chromecast-dashboard/sender/) [DeMille's url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast, but should work well on any big screen. (For instance an Amazon Fire TV)
 
 Thank you to [NOAA / NESDIS Center for Satellite Applications and Research](https://www.star.nesdis.noaa.gov/star/productdisclaimer.php) for making this possible!
 All images come from the [GOES-East Image Viewer site](https://www.star.nesdis.noaa.gov/GOES/index.php).
@@ -29,8 +29,8 @@ All images come from the [GOES-East Image Viewer site](https://www.star.nesdis.n
 * ["Florida"](<https://earth.wooleys.us/Bouncer.html?image_reload_minutes=11&max_size_percent=115&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/se/GEOCOLOR/1200x1200.jpg&crop_clip_path=37.5%%200%%200%%200%&page_title=Florida%20-%20GOES-East%20-%20Sector%20Views%20-%20GeoColor>)
 
 ## Transient Views (May not be working, but update the fastest
-* [Mezo 1](<https://earth.wooleys.us/Bouncer.html?image_reload_minutes=1&max_size_percent=115&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M1/DayLandCloud/latest.jpg&page_title=Mezo View 1&image_reload_minutes=2>)
-* [Mezo 2](<https://earth.wooleys.us/Bouncer.html?image_reload_minutes=1&max_size_percent=115&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M2/DayLandCloud/latest.jpg&page_title=Mezo View 2&image_reload_minutes=2>)
+* [Mezo 1](<https://earth.wooleys.us/Bouncer.html?image_reload_minutes=1&max_size_percent=115&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M1/GEOCOLOR/latest.jpg&page_title=Mezo View 1&image_reload_minutes=2>)
+* [Mezo 2](<https://earth.wooleys.us/Bouncer.html?image_reload_minutes=1&max_size_percent=115&image_url=https://cdn.star.nesdis.noaa.gov/GOES16/ABI/MESO/M2/GEOCOLOR/latest.jpg&page_title=Mezo View 2&image_reload_minutes=2>)
 
 ### Custom Bouncer Options
 * https://earth.wooleys.us/Bouncer.html understands the following URL Parameters
