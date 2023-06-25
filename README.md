@@ -1,7 +1,7 @@
 # GOES-East-Big-Screen
 A [collection of web pages](https://earth.wooleys.us) designed for real-time full screen viewing of GOES East imagery.
 
-Originally created to be used with tools like [Chromecast Dashboard](https://boombatower.github.io/chromecast-dashboard/sender/) [DeMille's url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast, but should work well on any big screen. (For instance an Amazon Fire TV)
+Originally created to be used with tools like [Chromecast Dashboard](https://boombatower.github.io/chromecast-dashboard/sender/) and [DeMille's url-cast-receiver](https://github.com/DeMille/url-cast-receiver) on a Chromecast, but should work well on any big screen. (For instance an Amazon Fire TV)
 
 Thank you to [NOAA / NESDIS Center for Satellite Applications and Research](https://www.star.nesdis.noaa.gov/star/productdisclaimer.php) for making this possible!
 All images come from the [GOES-East Image Viewer site](https://www.star.nesdis.noaa.gov/GOES/index.php).
